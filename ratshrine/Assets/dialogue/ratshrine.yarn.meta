@@ -1,0 +1,99 @@
+fileFormatVersion: 2
+guid: 7dc7a6f5c3e0748a8af41e2e26a82d17
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en
+  stringIDs:
+  - line:0551635
+  - line:015c32a
+  - line:0b3c3c0
+  - line:06a80a6
+  - line:0657ada
+  - line:0b1c339
+  - line:01f6eed
+  - line:08e2f86
+  - line:0b19277
+  - line:091d2c1
+  - line:0df3425
+  - line:0c608c2
+  - line:096fe97
+  - line:0e4ceae
+  - line:05c69d6
+  - line:0ce285e
+  - line:00f9733
+  - line:091e836
+  - line:0556c0d
+  - line:06e6ab7
+  - line:02ef1d5
+  - line:0543a6d
+  - line:0330aa7
+  - line:005f46d
+  - line:0ebad7e
+  - line:04ece99
+  - line:071e5f5
+  - line:0e8328f
+  - line:0cd7c43
+  - line:04a95cb
+  - line:055af28
+  - line:008cfbf
+  - line:0d49572
+  - line:063656d
+  - line:0e44067
+  - line:0df3335
+  - line:05c42f4
+  - line:0b1af1d
+  - line:0b86f9e
+  - line:008759c
+  - line:049d86b
+  - line:0377b05
+  - line:00314c0
+  - line:0439ecb
+  - line:0be4a99
+  - line:0032c87
+  - line:0cf1c84
+  - line:0233f8a
+  - line:0ab6c57
+  - line:02603ce
+  - line:039b802
+  - line:0af0235
+  - line:0917308
+  - line:0fd157f
+  - line:05a796f
+  - line:000dbc7
+  - line:0e2b882
+  - line:0adcf53
+  - line:07ed328
+  - line:016ac41
+  - line:03fdd43
+  - line:0373c5d
+  - line:0c0b343
+  - line:066fcab
+  - line:03c2399
+  - line:0d66465
+  - line:0f17350
+  - line:033992a
+  - line:0008e46
+  - line:07d36a1
+  - line:071e569
+  - line:05de815
+  - line:0d97898
+  - line:04cf670
+  - line:024924c
+  - line:0f776d0
+  compilationStatus: 0
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 'Error on line 1 at position 1:
+
+    extraneous input ''\n'' expecting ''title:''
+
+
+    ^'
+  baseLanguage: {fileID: 7128917941130120860, guid: 7dc7a6f5c3e0748a8af41e2e26a82d17,
+    type: 3}
+  localizations: []

@@ -1,0 +1,293 @@
+title: Start
+tags:
+colorID: 0
+position: 274,-166
+---
+welcome to the rat shrine. you stumbled upon it in an abandoned subway car while wandering the tunnels late at night. it is 3 am. the rats say you will not be able to leave until 3:14. you must appease them until then. what do you do? #line:0551635
+<<set $goodans to 0>>
+<<set $badans to 0>>
+<<set $neutans to 0>>
+[[make offering|offering]] #line:015c32a
+[[examine offerings|examine]] #line:0b3c3c0
+[[commune|commune]] #line:06a80a6
+
+===
+title: offering
+tags:
+colorID: 0
+position: 123,60
+---
+what do you offer? #line:0657ada
+[[lint ball|lint]] #line:0b1c339
+[[old gum|gum]] #line:01f6eed
+[[saltine crumbs|crumbs]] #line:08e2f86
+===
+title: examine
+tags:
+colorID: 0
+position: 299,77
+---
+there are offerings from past visitors. you can't tell if they are recent or decades old. which one do you want to examine? #line:0b19277
+[[banana peels|banana]] #line:091d2c1
+[[???|what]] #line:0df3425
+[[some bones|bones]] #line:0c608c2
+===
+title: commune
+tags:
+colorID: 0
+position: 486,77
+---
+how do you want to commune with the rats? #line:096fe97
+[[sit in repose|sit]] #line:0e4ceae
+[[talk 2 rats|talk]] #line:05c69d6
+[[drink|drink]] #line:0ce285e
+===
+title: lint
+tags:
+colorID: 0
+position: -4,352
+---
+you had a fairly sizable ball of lint accumulating in your left pocket. they push it into the their own heap of lint. it’s not food, but they like to roll around in it. it is their one comfort, besides mcdonald’s paper bags. #line:00f9733
+<<set $neutans = $neutans+1>>
+<<if !visited ("examine") && !visited ("commune")>>
+[[examine offerings|examine]] #line:091e836
+[[commune|commune]] #line:0556c0d
+<<elseif visited ("examine") && !visited ("commune")>>
+[[commune|commune]] #line:06e6ab7
+<<elseif visited ("commune") && !visited ("examine")>>
+[[examine offerings|examine]] #line:02ef1d5
+<<elseif visited ("examine") && visited ("commune")>>
+[[pray]]
+<<endif>>
+===
+title: banana
+tags:
+colorID: 0
+position: 252,357
+---
+a pile of mush brown, with a fresher one decorating the pinnacle. its pungent odor grows stronger as you step closer. the rats squeak angrily at you, protective of their decadent bounty. #line:0543a6d
+<<set $badans = $badans+1>>
+<<if !visited ("offering") && !visited ("commune")>>
+[[make offering|offering]] #line:0330aa7
+[[commune|commune]] #line:005f46d
+<<elseif visited ("offering") && !visited ("commune")>>
+[[commune|commune]] #line:0ebad7e
+<<elseif visited ("commune") && !visited ("offering")>>
+[[make offering|offering]] #line:04ece99
+<<elseif visited ("offering") && visited ("commune")>>
+[[pray]]
+<<endif>>
+===
+title: gum
+tags:
+colorID: 0
+position: 107,357
+---
+a bent up stick of trident tropical twist. two of them run up to fight over it as you weakly toss it towards them. they devour the wrapper and gum before it hits the ground. fruity. #line:071e5f5
+<<set $goodans = $goodans+1>>
+<<if !visited ("examine") && !visited ("commune")>>
+[[examine offerings|examine]] #line:0e8328f
+[[commune|commune]] #line:0cd7c43
+<<elseif visited ("examine") && !visited ("commune")>>
+[[commune|commune]] #line:04a95cb
+<<elseif visited ("commune") && !visited ("examine")>>
+[[examine offerings|examine]] #line:055af28
+<<elseif visited ("examine") && visited ("commune")>>
+[[pray]]
+<<endif>>
+
+===
+title: crumbs
+tags:
+colorID: 0
+position: -118,345
+---
+stale as hell. not enough for all of them, but the largest one claims the pale, once-crunchy morsels. it appears satiated, though the others seem to protest, whispering and muttering among each other in jealousy. #line:008cfbf
+<<set $badans = $badans+1>>
+<<if !visited ("examine") && !visited ("commune")>>
+[[examine offerings|examine]] #line:0d49572
+[[commune|commune]] #line:063656d
+<<elseif visited ("examine") && !visited ("commune")>>
+[[commune|commune]] #line:0e44067
+<<elseif visited ("commune") && !visited ("examine")>>
+[[examine offerings|examine]] #line:0df3335
+<<elseif visited ("examine") && visited ("commune")>>
+[[pray]]
+<<endif>>
+===
+title: what
+tags:
+colorID: 0
+position: 360,417
+---
+what the hell is that. not even the rats know. don’t touch it, don’t even look at it. #line:05c42f4
+<<set $neutans = $neutans+1>>
+<<if !visited ("offering") && !visited ("commune")>>
+[[make offering|offering]] #line:0b1af1d
+[[commune|commune]] #line:0b86f9e
+<<elseif visited ("offering") && !visited ("commune")>>
+[[commune|commune]] #line:008759c
+<<elseif visited ("commune") && !visited ("offering")>>
+[[make offering|offering]] #line:049d86b
+<<elseif visited ("offering") && visited ("commune")>>
+[[pray]]
+<<endif>>
+===
+title: bones
+tags:
+colorID: 0
+position: 450,390
+---
+are these…human bones? probably not. yeah. right? the rats won’t tell you what they are. some of them scuttle over to nibble on them when you point it out. something sticky oozes out of the bites, and it smells like vanilla. #line:0377b05
+<<set $goodans = $goodans+1>>
+<<if !visited ("offering") && !visited ("commune")>>
+[[make offering|offering]] #line:00314c0
+[[commune|commune]] #line:0439ecb
+<<elseif visited ("offering") && !visited ("commune")>>
+[[commune|commune]] #line:0be4a99
+<<elseif visited ("commune") && !visited ("offering")>>
+[[make offering|offering]] #line:0032c87
+<<elseif visited ("offering") && visited ("commune")>>
+[[pray]]
+<<endif>>
+===
+title: sit
+tags:
+colorID: 0
+position: 831,339
+---
+you sit down in the scuffed, orange seats across from the shrine, underneath a torn poster covered by graffiti that you think reads “juicee”. you stare at them. they stare back, eyes glowing. #line:0cf1c84
+<<set $neutans = $neutans+1>>
+<<if !visited ("offering") && !visited ("examine")>>
+[[make offering|offering]] #line:0233f8a
+[[examine offerings|examine]] #line:0ab6c57
+<<elseif visited ("offering") && !visited ("examine")>>
+[[examine offerings|examine]] #line:02603ce
+<<elseif visited ("examine") && !visited ("offering")>>
+[[make offering|offering]] #line:039b802
+<<elseif visited ("offering") && visited ("examine")>>
+[[pray]]
+<<endif>>
+===
+title: talk
+tags:
+colorID: 0
+position: 718,384
+---
+there is no need, since the rats know what you are thinking. still, you click your tongue at them affectionately. they hiss, opening their mouths in response, and smoke pours out. #line:0af0235
+<<set $badans = $badans+1>>
+<<if !visited ("offering") && !visited ("examine")>>
+[[make offering|offering]] #line:0917308
+[[examine offerings|examine]] #line:0fd157f
+<<elseif visited ("offering") && !visited ("examine")>>
+[[examine offerings|examine]] #line:05a796f
+<<elseif visited ("examine") && !visited ("offering")>>
+[[make offering|offering]] #line:000dbc7
+<<elseif visited ("offering") && visited ("examine")>>
+[[pray]]
+<<endif>>
+===
+title: drink
+tags:
+colorID: 0
+position: 659,505
+---
+there’s a paper cup filled halfway with murky liquid in your hand. when did that get there. it swirls, shifting colors like an oil spill. it smells like lavender. you take a sip. it tastes like grape juice. you down the rest, and place the cup on the altar. the rats squeak in approval. #line:0e2b882
+<<set $goodans = $goodans+1>>
+<<if !visited ("offering") && !visited ("examine")>>
+[[make offering|offering]] #line:0adcf53
+[[examine offerings|examine]] #line:07ed328
+<<elseif visited ("offering") && !visited ("examine")>>
+[[examine offerings|examine]] #line:016ac41
+<<elseif visited ("examine") && !visited ("offering")>>
+[[make offering|offering]] #line:03fdd43
+<<elseif visited ("offering") && visited ("examine")>>
+[[pray]]
+<<endif>>
+===
+title: health
+tags:
+colorID: 0
+position: 3,-42
+---
+you pray for health, for your aching feet and frail human body. for longevity and strength. because the rats are older than these manmade tunnels. they carry sickness but do not grow sick. #line:0373c5d
+they are stubborn, and they survive. you will too. #line:0c0b343
+<<set $goodans = $goodans+1>>
+<<fadein gameover>>
+[[tracks]]
+===
+title: fortune
+tags:
+colorID: 0
+position: -112,-56
+---
+you pray for fortune, for success and wealth. they sense in your desire something akin to their want for leftover fries, though they don’t understand material want. they’re just feral. they whip their tails around, bewildered. they're not sure what to give you. #line:066fcab
+<<set $badans = $badans+1>>
+<<fadein gameover>>
+<<wait 5>>
+[[tracks]]
+===
+title: forgiveness
+tags:
+colorID: 0
+position: -264,-53
+---
+you pray for forgiveness. the rats don’t quite recognize this feeling of guilt. they do not exist to be perceived. they do things in order to survive. they pity you for the burdens you carry. #line:03c2399
+<<set $neutans = $neutans +1>>
+<<fadein gameover>>
+[[tracks]]
+===
+title: pray
+tags:
+colorID: 0
+position: -115,123
+---
+<<wait 1>>
+It is 3:13. you may say a prayer before you leave. what do you pray for? #line:0d66465
+[[health|health]] #line:0f17350
+[[fortune|fortune]] #line:033992a
+[[forgiveness|forgiveness]] #line:0008e46
+===
+title: tracks
+tags:
+colorID: 0
+position: 32,-263
+---
+<<wait 4>>
+when you look up, you’re standing on the platform for uptown 4 and 5. your feet dangle over the yellow border, dimly illuminated by fluorescent lights. you feel as if you have just woken up from a dreamless sleep. you nearly fall forward into the tracks. #line:07d36a1
+[[end]]
+===
+title: end
+tags:
+colorID: 0
+position: -110,-422
+---
+<<if $goodans > $badans && $goodans > $neutans>>
+a rat scurries by, its eyes glinting in the dark. it winks at you knowingly. they watch over you now. #line:071e569
+<<elseif $badans > $goodans && $badans > $neutans>>
+you hear squeaking in the distance, and are filled with a sense of dread. you must leave and never return... #line:05de815
+<<elseif $neutans > $goodans && $neutans > $badans>>
+you don’t remember how you got here. you only know that you had been seized with a desire to disappear into the tunnels, away from the world. it's time to go back. #line:0d97898
+<<elseif $goodans == $badans || $badans == $neutans || $goodans == $neutans>>
+you don’t remember how you got here. you only know that you had been seized with a desire to disappear into the tunnels, away from the world. it's time to go back. #line:04cf670
+<<endif>>
+[[return|return]] #line:024924c
+[[leave|leave]] #line:0f776d0
+
+===
+title: return
+tags:
+colorID: 0
+position: 0,0
+---
+<<return yarncommands>>
+
+===
+title: leave
+tags:
+colorID: 0
+position: 0,0
+---
+<<leave yarncommands>>
+
+===

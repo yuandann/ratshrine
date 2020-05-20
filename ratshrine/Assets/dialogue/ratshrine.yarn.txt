@@ -1,0 +1,313 @@
+
+title: Start
+tags: 
+colorID: 0
+position: 274,-166
+parent: 
+---
+welcome to the rat shrine. you stumbled upon it in an abandoned subway car while wandering the tunnels late at night. it is 3 am. the rats say you will not be able to leave until 3:14. you must appease them until then. what do you do?
+<<set $goodans to 0>>
+<<set $badans to 0>>
+<<set $neutans to 0>>
+[[make offering|offering]]
+[[examine offerings|examine]]
+[[commune|commune]]
+
+===
+title: offering
+tags: 
+colorID: 0
+position: 123,60
+parent: 
+---
+what do you offer?
+[[lint ball|lint]]
+[[old gum|gum]]
+[[saltine crumbs|crumbs]]
+===
+title: examine
+tags: 
+colorID: 0
+position: 299,77
+parent: 
+---
+there are offerings from past visitors. you can't tell if they are recent or decades old. which one do you want to examine?
+[[banana peels|banana]]
+[[???|what]]
+[[some bones|bones]]
+===
+title: commune
+tags: 
+colorID: 0
+position: 486,77
+parent: 
+---
+how do you want to commune with the rats?
+[[sit in repose|sit]]
+[[talk 2 rats|talk]]
+[[drink|drink]]
+===
+title: lint
+tags: 
+colorID: 0
+position: -4,352
+parent: 
+---
+you had a fairly sizable ball of lint accumulating in your left pocket. they push it into the their own heap of lint. it’s not food, but they like to roll around in it. it is their one comfort, besides mcdonald’s paper bags.
+<<set $neutans = $neutans+1>>
+<<if !visited ("examine") && !visited ("commune")>>
+[[examine offerings|examine]]
+[[commune|commune]]
+<<elseif visited ("examine")&&!visited("commune")>>
+[[commune|commune]]
+<<elseif visited ("commune")&&!visited("examine")>>
+[[examine offerings|examine]]
+<<elseif visited ("examine") && visited ("commune")>>
+[[pray]]
+<<endif>>
+===
+title: banana
+tags: 
+colorID: 0
+position: 252,357
+parent: 
+---
+a pile of mush brown, with a fresher one decorating the pinnacle. its pungent odor grows stronger as you step closer. the rats squeak angrily at you, protective of their decadent bounty.
+<<set $badans = $badans+1>>
+<<if !visited ("offering") && !visited ("commune")>>
+[[make offering|offering]]
+[[commune|commune]]
+<<elseif visited ("offering")&&!visited("commune")>>
+[[commune|commune]]
+<<elseif visited ("commune")&&!visited("offering")>>
+[[make offering|offering]]
+<<elseif visited ("offering") && visited ("commune")>>
+[[pray]]
+<<endif>>
+===
+title: gum
+tags: 
+colorID: 0
+position: 107,357
+parent: 
+---
+a bent up stick of trident tropical twist. two of them run up to fight over it as you weakly toss it towards them. they devour the wrapper and gum before it hits the ground. fruity.
+<<set $goodans = $goodans+1>>
+<<if !visited ("examine") && !visited ("commune")>>
+[[examine offerings|examine]]
+[[commune|commune]]
+<<elseif visited ("examine")&&!visited("commune")>>
+[[commune|commune]]
+<<elseif visited ("commune")&&!visited("examine")>>
+[[examine offerings|examine]]
+<<elseif visited ("examine") && visited ("commune")>>
+[[pray]]
+<<endif>>
+
+===
+title: crumbs
+tags: 
+colorID: 0
+position: -118,345
+parent: 
+---
+stale as hell. not enough for all of them, but the largest one claims the pale, once-crunchy morsels. it appears satiated, though the others seem to protest, whispering and muttering among each other in jealousy.
+<<set $badans = $badans+1>>
+<<if !visited ("examine") && !visited ("commune")>>
+[[examine offerings|examine]]
+[[commune|commune]]
+<<elseif visited ("examine")&&!visited("commune")>>
+[[commune|commune]]
+<<elseif visited ("commune")&&!visited("examine")>>
+[[examine offerings|examine]]
+<<elseif visited ("examine") && visited ("commune")>>
+[[pray]]
+<<endif>>
+===
+title: what
+tags: 
+colorID: 0
+position: 360,417
+parent: 
+---
+what the hell is that. not even the rats know. don’t touch it, don’t even look at it.
+<<set $neutans = $neutans+1>>
+<<if !visited ("offering") && !visited ("commune")>>
+[[make offering|offering]]
+[[commune|commune]]
+<<elseif visited ("offering")&&!visited("commune")>>
+[[commune|commune]]
+<<elseif visited ("commune")&&!visited("offering")>>
+[[make offering|offering]]
+<<elseif visited ("offering") && visited ("commune")>>
+[[pray]]
+<<endif>>
+===
+title: bones
+tags: 
+colorID: 0
+position: 450,390
+parent: 
+---
+are these…human bones? probably not. yeah. right? the rats won’t tell you what they are. some of them scuttle over to nibble on them when you point it out. something sticky oozes out of the bites, and it smells like vanilla.
+<<set $goodans = $goodans+1>>
+<<if !visited ("offering") && !visited ("commune")>>
+[[make offering|offering]]
+[[commune|commune]]
+<<elseif visited ("offering")&&!visited("commune")>>
+[[commune|commune]]
+<<elseif visited ("commune")&&!visited("offering")>>
+[[make offering|offering]]
+<<elseif visited ("offering") && visited ("commune")>>
+[[pray]]
+<<endif>>
+===
+title: sit
+tags: 
+colorID: 0
+position: 831,339
+parent: 
+---
+you sit down in the scuffed, orange seats across from the shrine, underneath a torn poster covered by graffiti that you think reads “juicee”. you stare at them. they stare back, eyes glowing.
+<<set $neutans = $neutans+1>>
+<<if !visited ("offering") && !visited ("examine")>>
+[[make offering|offering]]
+[[examine offerings|examine]]
+<<elseif visited ("offering")&&!visited("examine")>>
+[[examine offerings|examine]]
+<<elseif visited ("examine")&&!visited("offering")>>
+[[make offering|offering]]
+<<<elseif visited ("offering") && visited ("examine")>>
+[[pray]]
+<<endif>>
+===
+title: talk
+tags: 
+colorID: 0
+position: 718,384
+parent: 
+---
+there is no need, since the rats know what you are thinking. still, you click your tongue at them affectionately. they hiss, opening their mouths in response, and smoke pours out.
+<<set $badans = $badans+1>>
+<<if !visited ("offering") && !visited ("examine")>>
+[[make offering|offering]]
+[[examine offerings|examine]]
+<<elseif visited ("offering")&&!visited("examine")>>
+[[examine offerings|examine]]
+<<elseif visited ("examine")&&!visited("offering")>>
+[[make offering|offering]]
+<<<elseif visited ("offering") && visited ("examine")>>
+[[pray]]
+<<endif>>
+===
+title: drink
+tags: 
+colorID: 0
+position: 659,505
+parent: 
+---
+there’s a paper cup filled halfway with murky liquid in your hand. when did that get there. it swirls, shifting colors like an oil spill. it smells like lavender. you take a sip. it tastes like grape juice. you down the rest, and place the cup on the altar. the rats squeak in approval.
+<<set $goodans = $goodans+1>>
+<<if !visited ("offering") && !visited ("examine")>>
+[[make offering|offering]]
+[[examine offerings|examine]]
+<<elseif visited ("offering")&&!visited("examine")>>
+[[examine offerings|examine]]
+<<elseif visited ("examine")&&!visited("offering")>>
+[[make offering|offering]]
+<<<elseif visited ("offering") && visited ("examine")>>
+[[pray]]
+<<endif>>
+===
+title: health
+tags: 
+colorID: 0
+position: 3,-42
+parent: 
+---
+you pray for health, for your aching feet and frail human body. for longevity and strength. because the rats are older than these manmade tunnels. they carry sickness but do not grow sick. 
+they are stubborn, and they survive. you will too.
+<<set $goodans = $goodans+1>>
+<<fadein gameover>>
+[[tracks]]
+===
+title: fortune
+tags: 
+colorID: 0
+position: -112,-56
+parent: 
+---
+you pray for fortune, for success and wealth. they sense in your desire something akin to their want for leftover fries, though they don’t understand material want. they’re just feral. they whip their tails around, bewildered. they're not sure what to give you.
+<<set $badans = $badans+1>>
+<<fadein gameover>>
+<<wait 5>>
+[[tracks]]
+===
+title: forgiveness
+tags: 
+colorID: 0
+position: -264,-53
+parent: 
+---
+you pray for forgiveness. the rats don’t quite recognize this feeling of guilt. they do not exist to be perceived. they do things in order to survive. they pity you for the burdens you carry.
+<<set $neutans = $neutans +1>>
+<<fadein gameover>>
+[[tracks]]
+===
+title: pray
+tags: 
+colorID: 0
+position: -115,123
+parent: 
+---
+It is 3:13. you may say a prayer before you leave. what do you pray for?
+[[health|health]]
+[[fortune|fortune]]
+[[forgiveness|forgiveness]]
+===
+title: tracks
+tags: 
+colorID: 0
+position: 32,-263
+parent: 
+---
+when you look up, you’re standing on the platform for uptown 4 and 5. your feet dangle over the yellow border, dimly illuminated by fluorescent lights. you feel as if you have just woken up from a dreamless sleep. you nearly fall forward into the tracks.
+[[end]]
+===
+title: end
+tags: 
+colorID: 0
+position: -110,-422
+parent: 
+---
+<<if $goodans > $badans && $goodans > $neutans>>
+a rat scurries by, its eyes glinting in the dark. it winks at you knowingly. they watch over you now.
+<<elseif $badans > $goodans && $badans > $neutans>>
+you hear squeaking in the distance, and are filled with a sense of dread. you must leave and never return...
+<<elseif $neutans > $goodans && $neutans > $badans>>
+you don’t remember how you got here. you only know that you had been seized with a desire to disappear into the tunnels, away from the world. it's time to go back.
+<<elseif $goodans == $badans || $badans == $neutans || $goodans == $neutans>>
+you don’t remember how you got here. you only know that you had been seized with a desire to disappear into the tunnels, away from the world. it's time to go back.
+<<endif>>
+[[return|return]]
+[[leave|leave]]
+
+===
+title: return
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<return gamemanager>>
+
+===
+title: leave
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<leave gamemanager>>
+
+===
